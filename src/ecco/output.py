@@ -283,10 +283,7 @@ class OutputSeq:
             'tokens': tokens,
             'attributions': [att.tolist() for att in attribution]
         }
-         with open('primary_attributions_data.json', 'w') as f:
-             json.dump(data, f)
-
-        print("Primary attributions data saved to primary_attributions_data.json")
+        
         d.display(d.HTML(filename=os.path.join(self._path, "html", "setup.html")))
 
         if (style == "minimal"):
@@ -331,7 +328,7 @@ class OutputSeq:
             print(data)
             return data
 
-    return data
+   
 
     def _repr_html_(self, **kwargs):
         # if util.type_of_script() == "jupyter":
